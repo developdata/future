@@ -16,8 +16,7 @@ let cards = [];
 let counter;
 let timerAmount;
 let timeInterval;
-
-      
+   
 startButton.disabled = true; 
 
 dealButton.addEventListener('click', function(){
@@ -43,6 +42,7 @@ startButton.addEventListener('click', function(){
 function dealCards(){
     //empty the card array so not building up an array
     cards.length = 0;
+    timerPosition.style.width = 0 + "%"
   
     for(var i = 0; i < playingCards.length; i++){
     
@@ -87,11 +87,9 @@ function displayCards(){
 function myTimer() {
     counter--;
     timerAmount = timerAmount + 0.835;
-    console.log(counter);
     timerGo();
     if(counter <= 0){
       clearInterval(timeInterval);
-      console.log('leaving');
       timerReset();
     }
   }
@@ -104,35 +102,9 @@ function myTimer() {
     dealButton.disabled = false;
     console.log(audio)
     audio.play();
-    timerPosition.style.width = 0 + "%"
   }
       
   function freezeButtons(){
     startButton.disabled = true; 
         dealButton.disabled = true;
   }
-    
-      
-    //   document.getElementById("deal").addEventListener('click', function(){
-    //     socket.emit('deal');
-    //   });
-    //   //CODE FOR THE TIMER
-    //   startButton.addEventListener('click', function(){
-    //     socket.emit('start timer');
-    //   });
-      
-    //   socket.on('freeze buttons', function(){
-    //     startButton.disabled = true; 
-    //     dealButton.disabled = true;
-    //   });
-
-    //   socket.on('timer go', function(incriment){
-    //     timerPosition.style.width = incriment + "%";
-    //   });
-
-
-
-    //   socket.on('timer reset', function(){
-    //     dealButton.disabled = false;
-    //     audio.play();
-    //   });
