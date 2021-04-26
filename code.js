@@ -33,7 +33,7 @@ startButton.addEventListener('click', function(){
         
         startButton.disabled = true; 
 
-        counter = 12;//in game should be 120 - 2 minutes
+        counter = 120;//in game should be 120 - 2 minutes
         timerAmount = 0;
         timeInterval = setInterval(myTimer, 1000);
      
